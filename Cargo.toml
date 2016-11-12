@@ -1,0 +1,10 @@
+[package]
+name = "adapter"
+version = "0.1.0"
+authors = ["Oleg Khryptul <okreptul@yahoo.com>"]
+repository = "https://github.com/HaronK/adapter.git"
+homepage = "https://github.com/HaronK/adapter"
+license = "MIT"
+readme = "README.md"
+documentation = "https://github.com/HaronK/adapter"
+description = "Represents a type that accepts values of other types and returns value of target type."
