@@ -109,14 +109,12 @@ macro_rules! adapter_accessors {
 
 #[cfg(test)]
 mod tests {
-    adapter_decl! (
-        StringSource<obj: T>: String => String::default();
+    adapter_decl!(StringSource<obj: T>: String => String::default();
         Str(String) {s => s.clone()};
         Func(Fn(&T) -> String) {f => f(&obj), boxed};
     );
 
-    adapter_decl! (
-        IntSource: i64 => i64::default();
+    adapter_decl!(IntSource: i64 => i64::default();
         Int(i64) {s => *s};
         Func(Fn() -> i64) {f => f(), boxed};
     );
@@ -127,7 +125,7 @@ mod tests {
     }
 
     impl MyStruct {
-        adapter_accessors! ( get_name, set_name, name -> StringSource<Self>: String );
+        adapter_accessors!(get_name, set_name, name -> StringSource<Self>: String);
     }
 
     #[test]
